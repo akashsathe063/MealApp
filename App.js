@@ -93,5 +93,7 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    backgroundColor: "#3f2f25",
+  },
 });

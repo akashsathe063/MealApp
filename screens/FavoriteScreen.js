@@ -14,15 +14,23 @@ function FavoriteScreen({ navigation }) {
     // favoriteMealsContext.ids.includes(meal.id)
     favoritesMealIds.includes(meal.id)
   );
-  if (favoriteMeals.length === 0) {
-    return (
-      <View style={styles.rootContainer}>
-        <Text style={styles.title}>You have no favorite meals yet.</Text>
-      </View>
-    );
-  }
+  // if (favoriteMeals.length === 0) {
+  //   return (
+  //     <View style={styles.rootContainer}>
+  //       <Text style={styles.title}>You have no favorite meals yet.</Text>
+  //     </View>
+  //   );
+  // }
 
-  return <MealList items={favoriteMeals} navigation={navigation} />;
+  return (
+    <View style={styles.rootContainer}>
+      {favoriteMeals.length === 0 ? (
+        <Text style={styles.title}>You have no favorite meals yet.</Text>
+      ) : (
+        <MealList items={favoriteMeals} navigation={navigation} />
+      )}
+    </View>
+  );
 }
 
 export default FavoriteScreen;
@@ -32,6 +40,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#3f2f25",
   },
   title: {
     fontWeight: "bold",
